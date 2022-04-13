@@ -24,3 +24,33 @@ var fun = function(){
 fun()  //调用函数
 ```
 
+### 函数声明的提升
+
+```js
+fun();
+function fun(){
+    alert("函数被执行")
+}
+```
+
+### 函数优先提升
+
+```js
+fun();
+var fun = function(){
+    alert('A');
+}
+function fun(){
+    alert('B');
+}
+fun();
+```
+
+函数优先提升，再执行变量声明提升，且无法覆盖提升的函数
+
+
+
+
+
+
+
