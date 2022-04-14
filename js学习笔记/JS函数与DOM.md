@@ -88,5 +88,37 @@ var result = sum(3,4) * sum(2,6)
 
 调用函数时，一旦遇见return语句则会立即退出函数，将执行权交还给调用者
 
+### sort()
 
+数组排列可以使用sort()方法，这个方法的参数又是一个函数
+
+```js
+var arr = [33,22,55,11];
+arr.sort(function(a,b){
+    if(a > b){
+        return 1;
+    }else{
+        return -1;
+    }
+});
+```
+
+ 这个函数中的a，b分别表示数组中靠前和靠后的项，如果需要将他们交换位置，则返回任意正数；否则就返回
+
+### 递归
+
+边界条件：确定递归到何时终止，也称为递归出口
+
+ 递归模式：大问题是如何分解为小问题的，也称为递归体
+
+```js
+//书写一个函数，这个函数内部自己会调用自己，从而形成递归。
+function factorial(n){
+    if(n == 1) return 1;
+    //函数的功能是计算n的阶乘
+    return n * factorial(n-1);
+}
+var result = factorial(4);
+alert(result);
+```
 
