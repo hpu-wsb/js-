@@ -122,3 +122,93 @@ var result = factorial(4);
 alert(result);
 ```
 
+###  变量作用域
+
+变量只在其定义时所在的function内部有意义
+
+```js
+function fun(){
+    var a = 10;
+}
+fun();
+console.log(a);//报错
+```
+
+### 全局变量
+
+如果不将变量定义再任何函数的内部，此时这个变量就是全局变量，他在任何函数内都可以被访问和更改
+
+```js
+var a = 10;
+function fun(){
+    a++;
+    console.log(a);//输出11
+}
+fun();
+console.log(a);//输出11
+```
+
+### 遮蔽效应
+
+如果函数中也定义了和全局同名的变量，则函数内的变量会将全局的变量"遮蔽"
+
+```js
+var a = 10;
+function fun(){
+    var a = 5;
+    a++;
+    console.log(a);//输出6
+}
+fun();
+console.log(a);//输出10
+```
+
+###  作用域链
+
+函数的嵌套：一个函数内部也可以定义一个函数。和局部变量类似，定义在一个函数内部的函数是局部函数
+
+```js
+function fun(){
+    function inner(){
+        console.log('你好')；
+    }
+    inner();
+}
+fun();
+```
+
+在函数嵌套中，变量会从内到外逐层寻找它的定义。
+
+```js
+var a = 10;
+var b = 20;
+function fun(){
+    var c = 30;
+    function inner(){
+        var a = 40;
+        var d = 50;
+        console.log(a,b,c,d);
+    }
+    inner();
+}
+fun()
+```
+
+### 不加var将定义全局变量
+
+在初次给变量赋值时，如果没有加var，则将定义全局变量
+
+```js
+function fun(){
+    a = 3;
+}
+fun();
+console.log(a);//3
+```
+
+
+
+
+
+
+
