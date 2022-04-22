@@ -206,9 +206,59 @@ fun();
 console.log(a);//3
 ```
 
+### 闭包
 
+闭包是函数本神和该函数声明时所处的环境状态的组合
 
+函数能够记忆住其定义时所处的环境，即使函数不在其定义的环境中被调用，也能访问定义时所处环境的变量 
 
+```js
+function fun(){
+    var name = '慕课网';
+    function innerFun(){
+        alert(name);
+    }
+    return innerFun;
+}
+var inn = fun();
+inn();
+```
 
+ 闭包允许我们将数据与操作该数据的函数关联起来，这与面向对象编程有少许相似之处
 
+### 记忆性
 
+当闭包产生时，函数所处环境的状态会始终保持再内存中，不会在外层函数调用后被自动清除，这就是闭包的记忆性 
+
+```js
+function createCheckTemp(standardTemp){
+    function checkTemp(n){
+        if (n <= standardTemp){
+            alert('你的体温正常');
+        }else{
+            alert('你的体温偏高');
+        }
+    }
+    return checkTemp;
+}
+var checkTemp_A = createCheckTemp(37.1);
+var checkTemp_B = createCheckTemp(37.3);
+checkTemp_A(37.2);
+```
+
+### 模拟私有变量
+
+```js
+//封装一个函数，这个函数的功能就是私有化变量
+function fun(){
+    //定义一个局部变量a
+    var a = 0;
+    return function(){
+        alert(a);
+    };
+}
+var getA = fun();
+getA();
+```
+
+不能滥用闭包，否则会造成网页的性能问题，严重时可能导致内存泄露。所谓的内存泄露是指程序中已动态分配的内存由于某种原因未释放或无法释放
