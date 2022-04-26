@@ -262,3 +262,50 @@ getA();
 ```
 
 不能滥用闭包，否则会造成网页的性能问题，严重时可能导致内存泄露。所谓的内存泄露是指程序中已动态分配的内存由于某种原因未释放或无法释放
+
+## DOM
+
+DOM是js操纵HTML和CSS的桥梁
+
+DOM是js操作HTML文档的接口，使文档操作变得非常优雅，简便
+
+DOM最大的特点就是将文档表示为节点树
+
+### nodeType常用属性值
+
+节点的nodeType属性可以显示这个节点具体的类型
+
+| nodeType值 | 节点类型                 |
+| ---------- | ------------------------ |
+| 1          | 元素节点，例如<p>和<div> |
+| 3          | 文字节点                 |
+| 8          | 注释节点                 |
+| 9          | document节点             |
+| 10         | DTD节点                  |
+
+### 访问元素节点
+
+所谓“访问”元素节点，就是指“得到”，“获取”页面上的元素节点
+
+对节点进行操作，第一步就是要得到它
+
+访问元素节点主要依靠document对象
+
+##### document对象
+
+document对象是DOM中最重要的东西，几乎所有DOM的功能都封装在了document对象中
+
+document对象也表示整个HTML文档，他是DOM节点树的根
+
+document对象的nodeType属性值是9 
+
+### 访问元素节点的常用方法
+
+| 方法                              | 功能                   | 兼容性                   |
+| --------------------------------- | ---------------------- | ------------------------ |
+| document.getElementById()         | 通过id得到元素         | IE6                      |
+| document.getElementsByTagName()   | 通过标签名得到元素数组 | IE6                      |
+| document.getElementsByClassName() | 通过类名得到元素数组   | IE9                      |
+| document.querySelector()          | 通过选择器得到元素     | IE8部分兼容，IE9完全兼容 |
+| document.querySelectorAll()       | 通过选择器得到元素数组 | IE8部分兼容，IE9完全兼容 |
+
