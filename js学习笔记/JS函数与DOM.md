@@ -309,3 +309,49 @@ document对象的nodeType属性值是9
 | document.querySelector()          | 通过选择器得到元素     | IE8部分兼容，IE9完全兼容 |
 | document.querySelectorAll()       | 通过选择器得到元素数组 | IE8部分兼容，IE9完全兼容 |
 
+```html
+<div id="box">我是一个盒子</div>
+<p id="para">我是一个段落</p>
+```
+
+```js
+var box = document.getElementById('box');
+var para = docunmet.getElementById('para');
+```
+
+### 延迟运行
+
+在测试DOM代码时，通常JS代码一定要写到HTML节点的后面，否则JS无法找到相应HTML节点
+
+可以使用window.onload = function(){}事件，使页面加载完毕后，再执行指定的代码
+
+### querySelector()
+
+querySelector()方法的功能是通过选择器得到元素
+
+```html
+<div id="box1">
+    <p>
+        我是段落
+    </p>
+    <p class="spec">
+        我是段落
+    </p>
+    <p>
+        我是段落
+    </p>
+</div>
+```
+
+```js
+var the_p = document.querySelector('#box1 .spec');
+```
+
+querySelector()方法只能得到页面上一个元素，如果有多个元素符合条件，则只能得到第一个元素
+
+querySelectorAll() 方法的功能是通过选择器得到元素数组
+
+即使页面上只有一个符合选择器的节点，也将得到长度为1的数组
+
+
+

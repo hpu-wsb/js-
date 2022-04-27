@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <P>我是段落A</P>
+        <P id="para">我是段落B</P>
+        <p>我是段落C</p>
+    </div>
+
+    <script>
+        var box = document.getElementById('box');
+        var para = document.getElementById('para');
+        //封装一个函数，这个函数可以返回元素的所有子元素节点，类似children的功能
+        function getChildren(node) {
+            //结果数组
+            var childen = [];
+            //遍历node这个节点的所有子节点，判断每一个子节点的nodeType属性是不是1
+            //如果是1，就推入结果数组
+            for (var i = 0; i < node.childNodes.length; i++) {
+                if (node.childNodes[i].nodeType == 1) {
+                    children.push(node.childNodes[i]);
+                }
+            }
+            return children;
+        }
+        console.log(getChildren(box));
+        console.log(getChildren(para))
+        //封装一个函数，这个函数可以返回元素的所有子元素节点，类似previousElementSibling的功能
+        function getElementPrevSibling(node) {
+            var o = node;
+            //使用while语句
+            while (o.previousSibling != null) {
+                if (o.previousSibling.nodeType == 1) {
+                    //结束循环，找到了
+                    return o.previousSibling;
+                }
+
+                //让o成为它的前一个节点
+                o = o.previousSibling;
+            }
+            return null;
+        }
+        console.log(getElementPrevSibling(para));
+        console.log(getElementPrevSibling(fpara));
+        //封装第三个函数，这个函数可以返回元素的所有兄弟节点
+        function getAllSibling(node) {
+            //前面的元素兄弟节点
+            var prevs = [];
+            //后面的元素兄弟节点
+            var nexts = [];
+            var o = node;
+            while (o.previousSibling != null) {
+                if (o.previousSibling.nodeType == 1) {
+                    prevs.unpush(o.previousSibling);
+                }
+                o = o.previousSibling;
+            }
+            o = node;
+            while (o.nextSibling != null) {
+                if (o.nextSibling.nodeType == 1) {
+                    prevs.push(o.nextSibling);
+                }
+                o = o.previousSibling;
+            }
+            console.log(getElementPrevSibling(para))
+    </script>
+</body>
+
+</html>
