@@ -353,5 +353,102 @@ querySelectorAll() 方法的功能是通过选择器得到元素数组
 
 即使页面上只有一个符合选择器的节点，也将得到长度为1的数组
 
+### 节点操作
 
+改变元素节点中的内容可以使用了相关属性：
+
+1.innerHTML:以HTML语法设置节点中的内容
+
+2.innerText：以纯文本的形式设置节点中的内容
+
+```html
+<div id="box"></div>
+<script>
+    var oBox = document.getElementById('box')；
+    oBox.innerHTML = '慕课网';
+</script>
+```
+
+如何改变元素节点的CSS样式
+
+```js
+oBox.style.backgroundColor = 'red';
+oBox.style.backgroundImagr = 'url(images/1.jpg)'; 
+oBox.style.fontSzie = '32px';
+```
+
+```html
+<style>
+    .box{
+        width:200px;
+        height:200px;
+        border:1px solid #000;
+    }
+</style>
+<div class="box" id="box">
+    
+</div>
+<script>
+    var oBox = document.getElementById('box');
+    oBox.style.backgroundColor = 'red';
+</script>
+```
+
+ 如何改变元素节点的HTML属性
+
+标准W3C属性，如src,href等等，只需要直接打点进行更改即可
+
+```js
+oImg.src = 'images/2.jpg'
+```
+
+不符合W3C标准的属性，要使用setAttribute()和getAttribute()来设置，读取
+
+```js
+oBox.setAttribute('data-n',10);
+var n = oBox.getAttribute('data-n');
+alert(n);
+```
+
+### 节点的创建
+
+document.createElement()方法用于创建一个指定tagname的HTML元素
+
+```js
+var oDiv = document.createElement('div')
+```
+
+##### 孤儿节点
+
+新创建出的节点时“孤儿节点”，这意味着它并没有被挂载到DOM树上，我们无法看见它
+
+必须使用appendChild()或insertBefore()方法将孤儿节点插入到DOM树上
+
+##### appendChild()
+
+任何已经在DOM书上的节点们都可以调用appendChild()方法，它可以将孤儿节点挂载到它的内部，成为它的最后一个子节点
+
+```js
+父节点.appendChild(孤儿节点);
+```
+
+insertBefore()
+
+任何已经在DOM树上的节点，都可以调用inserBefore()方法，它可以将孤儿节点挂载到它的内部，成为它的“标杆子节点”之前的节点
+
+```js
+父节点.insertBefore(孤儿节点，标杆节点)；
+```
+
+```js
+var obox = document.getElementById('box');
+var oPs = oBox.getElementsByTagName('p')
+//创建孤儿节点
+var oP = document.createElement('p');
+//设置内部文字
+oP.innerText = '我是新来的'
+//上树
+//oBox.appendChild(oP);
+oBox.insertBefore(oP,oPs[0]);
+```
 

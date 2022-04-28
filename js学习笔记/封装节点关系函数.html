@@ -57,20 +57,25 @@
             //后面的元素兄弟节点
             var nexts = [];
             var o = node;
+            //遍历node的前面的节点
             while (o.previousSibling != null) {
                 if (o.previousSibling.nodeType == 1) {
-                    prevs.unpush(o.previousSibling);
+                    prevs.unshift(o.previousSibling);
                 }
                 o = o.previousSibling;
             }
             o = node;
+            //遍历node的后面的节点
             while (o.nextSibling != null) {
                 if (o.nextSibling.nodeType == 1) {
                     prevs.push(o.nextSibling);
                 }
                 o = o.previousSibling;
             }
-            console.log(getElementPrevSibling(para))
+            //合并两个数组，然后返回
+            return prevs.concat(nexts);
+        }
+        console.log(getElementPrevSibling(para))
     </script>
 </body>
 
