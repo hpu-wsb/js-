@@ -440,6 +440,22 @@ insertBefore()
 父节点.insertBefore(孤儿节点，标杆节点)；
 ```
 
+```html
+<div id="box">
+    <p>
+        我是原本的段落0
+    </p>
+    <p>
+        我是原本的段落1
+    </p>
+    <p>
+        我是原本的段落2 
+    </p>
+</div>
+```
+
+
+
 ```js
 var obox = document.getElementById('box');
 var oPs = oBox.getElementsByTagName('p')
@@ -451,4 +467,42 @@ oP.innerText = '我是新来的'
 //oBox.appendChild(oP);
 oBox.insertBefore(oP,oPs[0]);
 ```
+
+### 移动节点
+
+如果将已经挂载到DOM树上的节点成为appendChild()或者insertBefore()的参数，这个节点将会被移动
+
+```js
+新父节点.appendChild(已经有父亲的节点);
+```
+
+```js
+新父节点.insertBefore(已经有父亲的节点，标杆子节点)；
+```
+
+这意味着一个节点不能同时位于DOM树的两个位置
+
+### 删除节点	
+
+removeChild()方法从DOM中删除一个子节点
+
+```js
+父节点.removeChild(要删除子节点)
+```
+
+节点不能主动删除自己，必须由父节点删除 
+
+### 克隆节点
+
+cloneNode()方法可以克隆节点，克隆出的节点是"孤儿节点"
+
+```js
+var 孤儿节点 = 老节点.cloneNode()
+```
+
+```js
+var 孤儿节点 = 老节点.cloneNode(true);
+```
+
+参数是一个布尔值，表示是否采用深度克隆：如果为true，则该节点所有后代节点也都会被克隆，如果为false,则只克隆该节点本身
 
