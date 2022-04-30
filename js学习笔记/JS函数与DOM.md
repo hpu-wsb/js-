@@ -506,3 +506,39 @@ var 孤儿节点 = 老节点.cloneNode(true);
 
 参数是一个布尔值，表示是否采用深度克隆：如果为true，则该节点所有后代节点也都会被克隆，如果为false,则只克隆该节点本身
 
+### 事件监听
+
+DOM允许我们书写JavaScript代码可以让HTML元素对事件做出反应
+
+“监听”顾名思义，就是让计算机随时能够发现这个事件发生了，从而执行程序员预先编写的一些程序
+
+设置事件监听的方法主要有onxxx和addEventListener()两种
+
+最简单的是设置它们的onxxx属性
+
+```js
+oBox.onclick = function(){
+    //点击盒子时，将执行这里的语句
+}
+```
+
+```html
+<style>
+    div{
+        width:200px;
+        height:200px;
+        background-color:#ccc;
+    }
+</style>
+<div id = "box">
+    
+</div>
+<script>
+    var oBox = docunment.getElementById('box');
+    //给box这个盒子添加点击事件监听
+    oBox.onclick = function(){
+        alert('你好，我是点击事件函数')
+    }
+</script>
+```
+
