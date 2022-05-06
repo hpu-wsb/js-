@@ -6,3 +6,4 @@ function checkEven(n) {
         return false
     }
 }
+//
