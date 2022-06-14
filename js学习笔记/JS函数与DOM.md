@@ -659,3 +659,18 @@ e.keyCode属性通常用于onkeydown事件和onkeyup中，表示用户按下的�
 | 回车键          | 13             |
 | 空格键          | 32             |
 
+###### e.preventDefault()
+
+e.preventDefault()方法用来阻止事件产生的“默认动作”
+
+一些特殊的业务需求，需要阻止事件的“默认动作”
+
+###### onmousewheel鼠标滚轮事件
+
+它的事件对象e提供deltaY属性表示鼠标滚动方向，向下滚动时返回正值，向上滚动时返回负值
+
+###### e.stopPropagation()方法
+
+e.stopPropagation()方法用来阻止事件继续传播
+
+在一些场合，非常有必要切断事件继续传播，否则会造成页面特效显示出bug
