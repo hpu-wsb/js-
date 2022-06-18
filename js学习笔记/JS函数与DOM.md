@@ -711,3 +711,65 @@ onmouseenter和onmouseover都表示鼠标进入，区别为：
 onmouseenter不冒泡，onmouseover冒泡
 
 onmouseenter相当于你事件处理函数附加给了哪个dom
+
+### 定时器
+
+setInterval()函数可以重复调用一个函数，在每次调用之间具有固定的时间间隔
+
+```js
+setInterval(function(){
+    //这个函数将自动被以固定间隔时间调用
+},2000);
+```
+
+### 函数的参数
+
+setInterval()函数可以接收第3，4.....个参数，他们将按照顺序传入函数
+
+```js
+setInterval(function(a,b){
+    //形式参数a的值是88，形式参数b的值是66
+},2000,88,66)
+```
+
+具名函数也可以传入setInterval
+
+```js
+var a=0;
+function(){
+    console.log(a++);
+}
+setInterval(fun,1000);
+```
+
+#### 清除定时器
+
+clearInterval()函数可以清楚一个定时器
+
+```js
+//设置定时器，并用timer变量接收这个定时器
+var timer=setInterval(function(){
+    
+},2000);
+oBtn.onclick=function(){
+    clearInterval(timer);
+}
+```
+
+### 延时器
+
+setTimeout()函数可以设置一个延时器，当指定时间到了之后，会执行函数一次，不会重复执行。
+
+```js
+setTimeout(function(){
+    //这个函数会在2秒后执行一次
+},2000);
+```
+
+clearTimeout()函数可以清除延时器 
+
+### 异步语句
+
+setInterval()和setTimeout()是两个异步语句
+
+异步：不会阻塞CPU继续执行其他语句，当异步完成时，会执行“回调函数”
