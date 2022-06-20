@@ -773,3 +773,36 @@ clearTimeout()函数可以清除延时器
 setInterval()和setTimeout()是两个异步语句
 
 异步：不会阻塞CPU继续执行其他语句，当异步完成时，会执行“回调函数”
+
+### 使用定时器实现动画
+
+### JS和CSS3结合实现动画
+
+css3的transition过度属性可以实现动画
+
+JavaScript可以利用CSS3的transition属性轻松实现元素动画
+
+JS和CSS3结合实现动画规避了定时器制作动画的缺点
+
+### 函数节流
+
+一个函数执行一次后，只有大于设定较高的执行周期后才允许执行第二次
+
+函数节流非常容易实现，只需要借助setTimeout()延时器
+
+```js
+var lock=true;
+function 需要节流的函数(){
+    //如果锁是关闭状态，则不执行
+    if(!lock)return;
+    //函数核心语句
+    
+    //关锁
+    lock=false;
+    //指定毫秒数后将锁打开
+    setTimeout(function(){
+        lock=true;
+    },2000);
+}
+```
+

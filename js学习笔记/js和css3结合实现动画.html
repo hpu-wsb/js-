@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">按我运动</button>
+    <div id="box"></div>
+    <script>
+        //得到元素
+        var btn = document.getElementById('btn');
+        var box = document.getElementById('box');
+        //标识量，指示当前盒子在左边还是右边
+        var pos = 1;   //1左边，2右边
+        //函数节流锁
+        var lock = true;
+        btn.onclick = function () {
+            //首先检查锁是否关闭
+            if (!lock) return;
+            //把过度加上
+            box.style.transition = 'all 2s linear 0s';
+            if (pos == 1) {
+                //瞬间移动，但是由于有过度，所以是动画
+                box.style.left = '1100px';
+                pos = 2;
+            } else if (pos == 2) {
+                box.style.left = '100px';
+                pos = 1;
+            }
+            //关锁
+            lock = false;
+            setTimeout(function () {
+                lock = true;
+            }, 2000);
+        };
+    </script>
+</body>
+
+</html>
