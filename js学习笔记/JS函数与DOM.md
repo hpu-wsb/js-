@@ -806,3 +806,26 @@ function 需要节流的函数(){
 }
 ```
 
+## BOM
+
+BOM是JS与浏览器窗口交互的接口
+
+一些与浏览器改变尺寸，滚动条滚动相关的特效，都要借助BOM技术
+
+### window对象
+
+window对象是当前JS脚本运行所处的窗口，而这个窗口中包含DOM结构，window.document属性就是document对象
+
+在有标签页功能的浏览器中，每个标签都拥有自己的window对象；也就是说，同一个窗口的标签页之间不会共享一个window对象 
+
+### 全局变量是window的属性
+
+全局变量会变成window对象的属性
+
+```js
+var a=10;
+console.log(window.a==a);//true
+```
+
+这就意味着，多个js文件之间是共享全局作用域的，即js文件没有作用域隔离功能
+
