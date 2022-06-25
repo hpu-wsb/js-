@@ -887,3 +887,30 @@ history.back();//回退
 history.go(-1);
 ```
 
+### Location对象
+
+window.location标识当前所在网页，可以通过给这个属性赋值命令浏览器进行页面跳转
+
+```js
+window.location='http://www.imooc.com';
+window.location.href='http://www.imooc.com';
+```
+
+### 重新加载当前页面
+
+可以调用location的reload方法以重新加载当前页面，参数true表示强制从服务器强制加载
+
+```js
+window.location.reload(true);
+```
+
+### 返回顶部按钮制作
+
+返回顶部得原理：改变document.documentElement.scrollTop属性，通过定时器逐步改变此值，则将用动画形式返回顶部
+
+###  楼层导航小效果
+
+DOM元素都有offsetTop属性，表示此元素到定位祖先元素的垂直距离
+
+定位祖先元素：在祖先中，离自己最近的且拥有定位属性的元素
+
