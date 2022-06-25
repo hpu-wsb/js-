@@ -829,3 +829,61 @@ console.log(window.a==a);//true
 
 这就意味着，多个js文件之间是共享全局作用域的，即js文件没有作用域隔离功能
 
+### 内置函数普遍是window的方法
+
+如setInterval(),alert()等内置函数，普遍是window的方法
+
+```js
+console.log(window.alert==alert);//true
+console.log(window.setInterval==setInterval);//true
+```
+
+窗口尺寸相关属性
+
+| 属性        | 意义                                       |
+| ----------- | ------------------------------------------ |
+| innerHeight | 浏览器窗口的内容区域的高度，包含水平滚动条 |
+| innerWidth  | 浏览器窗口的内容区域的宽度，包含垂直滚动条 |
+| outerHeight | 浏览器窗口的外部宽度                       |
+| outerWidth  | 浏览器窗口的外部宽度                       |
+
+### resize事件
+
+在窗口大小改变之后，就会触发resize事件，可以使用window.onresize或者window.addEventListener来绑定事件处理函数
+
+### 已卷动高度
+
+window.scrollY属性表示在垂直方向已滚动的像素值
+
+### 已动高度
+
+document.documentElement.scrollTop属性也表示窗口卷动高度
+
+document.documentElement.scrollTop不是只读的，而window.scrollY是只读的
+
+###  scroll事件
+
+在窗口被卷动之后，就会触发scroll事件，可以使用window.onscroll或者window.addEventListener来绑定事件处理函数
+
+### Navigator对象
+
+window.navigator属性可以检索navigator对象，它内部含有用户此次活动的浏览器的相关属性和标识
+
+| 属性       | 意义             |
+| ---------- | ---------------- |
+| appName    | 浏览器官方名称   |
+| appVersion | 浏览器版本       |
+| userAgent  | 浏览器的用户代理 |
+| platform   | 用户操作系统     |
+
+### History对象
+
+window.history对象提供了操作浏览器会话历史的接口
+
+常用操作就是模拟浏览器回退按钮
+
+```js
+history.back();//回退
+history.go(-1);
+```
+
