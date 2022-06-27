@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var boj1 = {
+            a: 1,
+            b: 2,
+            c: [44, 55, 66]
+        };
+        var obj2 = {};
+        for (var k in obj1) {
+            // 每遍历一个k属性，就给obj2也添加一个同名的k属性
+            //值和obj1的k属性值相同
+            obj2[k] = obj1[k];
+        }
+        obj1.b++;
+        conosole.log(obj2);
+    </script>
+</body>
+
+</html>
