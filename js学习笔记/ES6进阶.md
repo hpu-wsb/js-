@@ -43,3 +43,84 @@ const [num,...args]=[1,2,3,4];
 如果展开的不是对象，则会自动将其转为对象，再将其属性罗列出来
 
 ## Set 和 Map 数据结构
+
+### Set
+
+数组是一系列有序的数据集合
+
+set是一系列无序，没有重复值的数据集合
+
+set没有下标去标示每一个值，所以set是无序的，也不能像数组那样通过下标去访问set的成员
+
+ set对重复值的判断基本遵循严格相等(===)
+
+数组或字符串去重时使用set
+
+```js
+//数组去重
+//[1,2,1]
+const s=new Set([1,2,1]);
+console.log(s);
+
+console.log([...new Set([1,2,1])]);
+```
+
+```js
+//字符串去重
+const s=new Set('abbacbd');
+console.log([...s].join(''));
+console.log(S);
+
+console.log([...new Set('abbacbd')].join(''));
+```
+
+不需要通过下标访问，只需要遍历时使用set
+
+为了使用set提供的方法和属性时
+
+```js
+(add delete clear has forEach size登)
+```
+
+存放DOM元素
+
+```js
+const s=new Set(document.querySelectorAll('p'));
+console.log(s);
+s.forEach(function (elem){
+    elem.style.color='red'
+})
+```
+
+### Map(映射)
+
+map和对象都是键值对的集合
+
+ 使用set添加的新成员，键如果已经存在，后添加的键值对覆盖已有的
+
+只能传二维数组，而且必须体现出键和值
+
+```js
+const m = new Map([
+    [p1,{
+        color:'red',
+        backgroundColor:'yellow',
+        fontSize:'40px'
+    }],
+     [p2,{
+        color:'green',
+        backgroundColor:'pink',
+        fontSize:'40px'
+    }],
+    [p2,{
+        color:'blue',
+        backgroundColor:'orange',
+        fontSize:'40px'
+    }],
+]);
+m.forEach((color, elem) => {
+elem.style.color = color;
+});
+console.log(m);
+```
+
