@@ -171,4 +171,4 @@ for(const of arr.keys()){
 
 entries()得到的是索引+值组成的数组的可遍历对象
 
-只会遍历出那些done为false时，对应的value值
+只会遍历出那些done为false时，对应的value值  
