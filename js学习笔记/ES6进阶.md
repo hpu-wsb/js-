@@ -124,3 +124,51 @@ elem.style.color = color;
 console.log(m);
 ```
 
+### iterator遍历器
+
+```js
+const it = [1, 2][Symbol.iterator]();
+console.log it.next(); // {value: 1, done: false}
+console.log it.next(); // {value: 2, done: false}
+console.log it.next(); // {value: undefined, done:true}
+console.log (it.next(); // {value: undefined, done:true}
+```
+
+it：可遍历对象
+
+iterator：Symbol.iterator (可遍历对象的生成方法) -> it (可遍历对
+象) -> it.next() -> it.next() -> ... (直到done为.true)
+
+iterator遍历器是一个统一的遍历方式   
+
+##### for...of
+
+与break，continue一起使用
+
+```js
+const arr=[1,2,3];
+for(const item of arr){
+    if(item===2){
+        continue;
+    }
+    console.log(item);
+}
+```
+
+在for...of中取得数组的索引
+
+keys()得到的是索引的可遍历对象，可以遍历出索引值
+
+values()得到的是值的可遍历对象，可以遍历出值
+
+```js
+const arr=[1,2,3];
+console.log(arr.keys());
+for(const of arr.keys()){
+    console.log(key);
+}
+```
+
+entries()得到的是索引+值组成的数组的可遍历对象
+
+只会遍历出那些done为false时，对应的value值
