@@ -208,3 +208,7 @@ findindex()：找到满足条件的一个，立即返回其索引
 用来合并对象
 
 object.assign直接合并了第一个参数中，返回的就是合并后的对象
+
+数组的keys()、values()、 entries() 等方法是实例方法,返回的都是Iterator
+
+对象的Object.keys()、Object.values()、 Object.entries()等方法是构造函数方法，返回的是数组I
