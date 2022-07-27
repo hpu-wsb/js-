@@ -38,3 +38,7 @@ catch专门用来处理rejected状态，本质上是then的特例
 
 ### finnally()
 
+当Promise状态发生变化时，无论什么变化都会执行，不变化不执行 
+
+### Promise.resolve()和Promise.reject()
+
