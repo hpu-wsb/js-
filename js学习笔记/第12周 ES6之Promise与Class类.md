@@ -56,3 +56,39 @@ catch专门用来处理rejected状态，本质上是then的特例
 
 ### Promise.race()和Promise.allSettled
 
+Promise.race()的状态取决于第一个完成的 Promise实例对象，如果第一一个完成的成功了，那最终的就成功;如果第一个完成的失败了，那最终的就失败
+
+ Promise.allSettled()的状态与传入的Promise状态无关,永远都是成功的,它只会忠实的记录下各个Promise的表现
+
+### Promise的注意事项
+
+ 参数如果不是Promise数组，会将不是Promise的数组元素转变成Promise对象
+
+```js
+//异步加载图片
+const loadimgAsync = url=>{
+    return new Promise((resolve,reject)=>{
+        const img=new image();
+        img.onload=()=>{
+            resolve(img);
+        };
+        img.onerror=()=>{
+            reject(new Error(`Could not load image at ${url}`));
+        };
+        img.src=url;
+    });
+};
+const imgDOM=document.getElementByld('img');
+loadimgAsync(
+'https//img.mukewang.com/5f057a6a0001f4f918720764.jpg')
+.then(img=>{
+    console.log(img.src);
+    setTimeout(()=>{
+        imgDOM.src=img.src;
+    },1000);
+})
+.catch(err=>{
+    console.log err;
+});
+```
+
