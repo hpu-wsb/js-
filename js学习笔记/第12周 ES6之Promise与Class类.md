@@ -42,3 +42,17 @@ catch专门用来处理rejected状态，本质上是then的特例
 
 ### Promise.resolve()和Promise.reject()
 
+当Promise.resolve()接收的是Promise对象时，直接返回这个Promise对象，什么都不做
+
+### Promise.all
+
+用来关注多个Promise对象的状态变化
+
+传入多个Promise实例，包装成一个新的Promise实例返回
+
+所有状态都变成resolved，最终的状态才会变成resolved
+
+只要有一个变成rejected，最终的状态就变成rejected
+
+### Promise.race()和Promise.allSettled
+
