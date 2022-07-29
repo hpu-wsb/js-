@@ -92,3 +92,74 @@ loadimgAsync(
 });
 ```
 
+## Class(类)
+
+类可以看作是对象的模板，用一个类可以创建出许多不同的对象
+
+实例化时执行构造方法，所以必须有构造方法，但可以不写出来
+
+### Class的两种定义形式
+
+声明形式：
+
+```js
+class Person{
+    constructor(){}
+    speak(){}
+}
+```
+
+表达式形式
+
+```js
+const Person=class{
+    constructor(){
+        console.log('constructor');
+    }
+    speak(){}
+};
+```
+
+### 实例属性，静态方法和静态属性
+
+实例属性：
+
+```js
+class Person{
+    constructor(name){
+        this.name=name;//实例属性
+    }
+}
+```
+
+方法就是值为函数的特殊属性
+
+### extends
+
+子类继承父类
+
+```js
+class Person {
+constructor(name, sex) {
+this.name = name;
+this.sex = sex;
+this.say = function 0) 0;
+speak() }
+static speak() {}
+Person.version = '1.0';
+class Programmer extends Person{
+    constructor(name,sex){
+        super(name,sex);
+    }
+}
+const zs = new Programmer('zs','男')
+```
+
+改写继承的属性或方法使用同名覆盖
+
+
+
+
+
+
+
