@@ -24,4 +24,4 @@
 
 ## 2.Babel 与 Webpack
 
-### babel
+### babel  
