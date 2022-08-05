@@ -25,3 +25,5 @@
 ## 2.Babel 与 Webpack
 
 ### babel  
+
+babel是js的编译器，用来将es6的代码，转换成es6之前的代码
