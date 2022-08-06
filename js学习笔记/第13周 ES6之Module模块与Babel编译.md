@@ -43,3 +43,9 @@ webpack可以处理js/css/图片，图标字体等单位
 开发过程中存在于本体的js/css/图片/图标字体等文件，就是静态的
 
 动态的内容，webpack没办法处理，只能处理静态的
+
+### entry和output
+
+entry指定入口文件
+
+output指定出口文件
