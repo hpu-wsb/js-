@@ -22,7 +22,7 @@
 
 被导入的代码都会执行一遍，也仅会执行一遍
 
-## 2.Babel 与 Webpack
+## 2.Babel 与 Webpack 
 
 ### babel  
 
