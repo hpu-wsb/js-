@@ -50,6 +50,17 @@ entry指定入口文件
 
 output指定出口文件
 
-### loader
+### loader 
 
 让webpack能够去处理那些非js文件的模板 
+
+### plugins(插件)
+
+ 用于执行范围更广的任务
+
+### 处理css文件
+
+```js
+import'./src/index.css';
+```
+
