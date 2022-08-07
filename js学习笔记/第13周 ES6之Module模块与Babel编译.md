@@ -49,3 +49,7 @@ webpack可以处理js/css/图片，图标字体等单位
 entry指定入口文件
 
 output指定出口文件
+
+### loader
+
+让webpack能够去处理那些非js文件的模板 
