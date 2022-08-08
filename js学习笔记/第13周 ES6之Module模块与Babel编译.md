@@ -61,6 +61,9 @@ output指定出口文件
 ### 处理css文件
 
 ```js
-import'./src/index.css';
+import'./index.css';
 ```
 
+下载插件
+
+用file-loader处理css文件中的图片
