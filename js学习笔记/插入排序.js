@@ -14,6 +14,6 @@ function sort(arr) {
     }
     return a
 }
-let arr = [12, 1, 5, 8, 9, 15]
+let arr = [13, 5, 8, 3, 9, 10, 15]
 arr = sort(arr)
 console.log(arr)
