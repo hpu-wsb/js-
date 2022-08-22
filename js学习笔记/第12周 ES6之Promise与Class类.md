@@ -10,7 +10,7 @@ Promise一般用来解决层层嵌套的回调函数的问题
 
  Promise有3种状态，- 开始是pending (未完成) 
 
-执行resolve,变成fulfilled(resolved),已成功
+执行resolve,变成fulfilled(resolved),已成功 
 
 执行reject, 变成rejected, 已失败
 
